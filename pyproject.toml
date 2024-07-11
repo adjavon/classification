@@ -17,9 +17,9 @@ authors = [
 ]
 dynamic = ["version"]
 dependencies = [
-    matplotlib,
-    torch,
-    torchvision    
+    'matplotlib',
+    'torch',
+    'torchvision'
 ]
 
 [project.optional-dependencies]
