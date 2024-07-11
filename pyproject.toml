@@ -16,7 +16,11 @@ authors = [
     { email = "diane.adjavon@icloud.com", name = "Diane Adjavon" },
 ]
 dynamic = ["version"]
-dependencies = []
+dependencies = [
+    matplotlib,
+    torch,
+    torchvision    
+]
 
 [project.optional-dependencies]
 dev = [
