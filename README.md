@@ -14,5 +14,5 @@ pip install git+https://github.com/adjavon/classification.git
 And then to added to the notebook use the following import:
 
 ```
-classifier.data.ColoredMNIST
+from classifier.data import ColoredMNIST
 ```
