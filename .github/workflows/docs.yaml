@@ -24,20 +24,3 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs/
-
-  # Deploy the artifact to GitHub pages.
-  # NOTE: You must enable GitHub pages in Settings with the Source as Github Actions
-#
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
-#
