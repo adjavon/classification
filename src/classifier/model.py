@@ -1,6 +1,8 @@
 from math import prod
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
+
 
 # Dense model:
 class DenseModel(nn.Module):
@@ -21,13 +23,12 @@ class DenseModel(nn.Module):
         self.fc0 = nn.Linear(input_size, 256)
         self.fc1 = nn.Linear(256, 120)
         self.fc2 = nn.Linear(120, 84)
-        self.fc3 = nn.Linear(84, num_classes) # output
+        self.fc3 = nn.Linear(84, num_classes)  # output
 
     def forward(self, x):
-        x = torch.flatten(x, 1) # flatten all dimensions except batch
+        x = torch.flatten(x, 1)  # flatten all dimensions except batch
         x = F.relu(self.fc0(x))
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
         x = self.fc3(x)
         return x
-
